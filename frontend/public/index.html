@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Tutorial App</title>
+    <!-- Link to our custom CSS file -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header section -->
+        <header>
+            <h1>📚 Simple Tutorial App</h1>
+            <p>Learn how to input data into a frontend and store it in a database!</p>
+        </header>
+
+        <!-- Main content area -->
+        <main>
+            <!-- Form section for adding new users -->
+            <section class="form-section">
+                <h2>➕ Add New User</h2>
+                <form id="userForm">
+                    <div class="form-group">
+                        <label for="userName">Name:</label>
+                        <input type="text" id="userName" name="name" required 
+                               placeholder="Enter user's name">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="userEmail">Email:</label>
+                        <input type="email" id="userEmail" name="email" required 
+                               placeholder="Enter user's email">
+                    </div>
+                    
+                    <button type="submit" class="btn-primary">Add User</button>
+                </form>
+                
+                <!-- Status message area -->
+                <div id="statusMessage" class="status-message"></div>
+            </section>
+
+            <!-- Users list section -->
+            <section class="users-section">
+                <h2>👥 Users in Database</h2>
+                <button id="refreshBtn" class="btn-secondary">🔄 Refresh List</button>
+                
+                <!-- Users will be displayed here -->
+                <div id="usersList" class="users-list">
+                    <p class="loading">Loading users...</p>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer>
+            <p>Tutorial App - Learning Java Backend with PostgreSQL</p>
+        </footer>
+    </div>
+
+    <!-- Link to our JavaScript file -->
+    <script src="script.js"></script>
+</body>
+</html>

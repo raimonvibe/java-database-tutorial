@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  # PostgreSQL database service
+  postgres:
+    image: postgres:14
+    container_name: tutorial_postgres
+    environment:
+      # Database configuration - these match our application.properties
+      POSTGRES_DB: tutorial_db
+      POSTGRES_USER: tutorial_user
+      POSTGRES_PASSWORD: tutorial_password
+    ports:
+      # Expose PostgreSQL on port 5432
+      - "5432:5432"
+    volumes:
+      # Persist database data
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      # Check if PostgreSQL is ready
+      test: ["CMD-SHELL", "pg_isready -U tutorial_user -d tutorial_db"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  # Named volume for PostgreSQL data persistence
+  postgres_data:
