@@ -248,7 +248,7 @@ const API_BASE_URL = 'https://your-backend-name.onrender.com/api/users';
    - **Branch:** `main`
    - **Root Directory:** `backend`
    - **Runtime:** `Java`
-   - **Build Command:** `mvn clean install`
+   - **Build Command:** `./mvnw clean install`
    - **Start Command:** `java -jar target/simple-tutorial-backend-1.0.0.jar`
 4. **Environment Variables:**
    Click "Advanced" and add these environment variables:
@@ -294,6 +294,7 @@ const API_BASE_URL = 'https://your-backend-name.onrender.com/api/users';
 - Check build logs for Maven errors
 - Verify environment variables are set correctly
 - Ensure database is running and accessible
+- **"mvn: command not found" error:** Use `./mvnw clean install` instead of `mvn clean install` (Maven wrapper is included in this project)
 
 **Frontend can't connect to backend:**
 - Verify API URL in `script.js` matches your backend URL
