@@ -1,6 +1,6 @@
 package com.tutorial;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 
 /**
  * User entity class that represents a user in our database
